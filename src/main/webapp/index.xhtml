@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Welcome to OTAME</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="script.js" />
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputScript library="js" name="bootstrap.min.js" />
+        <style>
+            label{
+                font-weight: normal !important;
+            }
+            .small{
+                color:#ffffff;
+            }
+        </style>
+    </h:head>
+
+    <h:body styleClass="start-body">
+       <div id="wrap"> 
+     <h:form id="l-form" onsubmit="return validateLogin()">  
+         
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <p class="navbar-brand"><a href="https://www.otame.de">OTAME<sup>*</sup></a></p>
+    </div>
+    <div>
+      
+      <ul class="nav navbar-nav navbar-right login-box">
+        <li style="padding-top:10px"><span style="color:#ffffff">E-mail&#160;</span> <h:inputText  id="mail" value="#{userBean.userMail}"/></li>
+        <li style="padding-top:10px"><span style="color:#ffffff">&#160;Passwort&#160;</span><h:inputSecret id="password" value="#{userBean.password}"/></li>
+        <li style="padding-top:9px"><h:commandButton class="btn btn-success btn-sm" id="submit" value="Anmelden" action="#{userBean.login}"/></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+     </h:form>
+        
+        
+        <div id="body-index" class="container" style="width:70%;  margin-top:50px; margin-left: 100px; border: 0px #f00 solid">
+            
+           
+   
+        <h:form role="form" id="r-form" onsubmit="return validateRegistration()">
+            
+            <p:growl id="growl" showDetail="true" sticky="false" life="6000"/>
+            
+               
+            
+            
+            <div class="row">
+
+    <div class="col-sm-2">
+     <h:outputLabel  for="mail" value="E-Mail" styleClass="required" />
+    </div>
+
+
+    <div class="col-sm-3">
+      <h:inputText class="form-control" onblur="validateMail(this.id)" immediate="true"  id="mail" value="#{userBean.userMail}" required="true" label="Mail" requiredMessage="Bitte geben Sie Ihre Email ein."> 
+                    
+                    <f:validator validatorId="com.project.epsy.validators.EmailValidator"/>
+                   
+                </h:inputText>
+    </div>
+
+ <div class="col-sm-3">
+      <p style="color:#ec0f0f;" id="error-m"></p>
+    </div>
+
+  </div>
+            
+         
+            <br/>
+            
+        <div class="row">
+
+    <div class="col-sm-2">
+     <h:outputLabel  for="password" value="Passwort wählen" styleClass="required" />
+    </div>
+
+
+    <div class="col-sm-3">
+      <h:inputSecret  class="form-control" onblur="validatePassword()" immediate="true"  id="password" value="#{userBean.password}" required="true" label="Mail" requiredMessage="Bitte wählen Sie ein Passwort."> 
+                    
+                    
+                   
+                </h:inputSecret>
+    </div>
+
+ <div class="col-sm-3">
+      <p style="color:#ec0f0f;" id="error-p"></p>
+    </div>
+
+  </div>    
+            
+            <br/>
+            
+
+          <div class="row">
+
+    <div class="col-sm-2">
+     <h:outputLabel  for="password2" value="Passwort wiederholen" styleClass="required" />
+    </div>
+
+
+    <div class="col-sm-3">
+      <h:inputSecret  class="form-control"  onblur="validatePassword()" immediate="true"  id="password2" value="#{userBean.password2}" required="true" label="Mail" requiredMessage="Bitte wiederholen Sie ihr Passwort."> 
+                    
+                    
+                   
+                </h:inputSecret>
+    </div>
+
+ <div class="col-sm-3">
+      <p style="color:#ec0f0f;" id="error-p2"></p>
+    </div>
+
+  </div>    
+        
+            <br/>
+             
+            
+  <div class="row">
+
+    <div class="col-sm-2">
+     <h:outputLabel for="department" value="Studienfach" styleClass="required" />
+    </div>
+
+
+    <div class="col-sm-3">
+      <h:selectOneMenu   class="form-control"  onblur="validateDepartment()" id="department" value="#{userBean.department}" required="true" requiredMessage="Bitte geben Sie Ihr Studienfach an.">
+            <f:selectItem itemValue="#{null}" itemLabel="--Bitte wählen--"/>
+            <f:selectItems value="#{userBean.departments}"/>
+            </h:selectOneMenu>
+    </div>
+
+ <div class="col-sm-4">
+      <p style="color:#ec0f0f;" id="error-d"></p>
+    </div>
+
+  </div>
+            
+           
+            <br/>
+            
+             <div class="row">
+
+    <div class="col-sm-2">
+     <h:outputLabel for="gender" value="Geschlecht" styleClass="required" />
+    </div>
+
+
+    <div class="col-sm-3 welcome-gender">
+       <h:selectOneRadio onblur="validateGender()" id="gender" label="Geschlecht" value="#{userBean.sex}" required="true" requiredMessage="Bitte geben Sie Ihr Geschlecht an.">
+            
+            <f:selectItems value="#{userBean.sexes}"/>
+            
+        </h:selectOneRadio>
+        
+    </div>
+
+ <div class="col-sm-4">
+      <p style="color:#ec0f0f;" id="error-g"></p>
+    </div>
+
+  </div>
+          
+            <br/>
+          
+               <div class="row">
+
+    <div class="col-sm-2">
+      <h:outputLabel for="date" value="Geburtsjahr" styleClass="required" />
+    </div>
+
+
+    <div class="col-sm-3">
+       <h:selectOneMenu  class="form-control"  onblur="validateYear()" id="date" value="#{userBean.year}" required="true" requiredMessage="Bitte geben Sie Ihr Geburtsjahr an.">
+            <f:selectItem itemValue="#{null}" itemLabel="--Bitte wählen--"/>
+            <f:selectItems value="#{userBean.years}"/>
+            
+        </h:selectOneMenu>
+        
+    </div>
+
+ <div class="col-sm-4">
+      <p style="color:#ec0f0f;" id="error-b"></p>
+    </div>
+
+  </div>
+                 
+            <br/>
+             
+            
+            
+             <div class="row">
+
+    <div class="col-sm-2">
+      <h:outputLabel for="cert" value="Möchten Sie ein Zertifikat?" />
+       
+    </div>
+
+
+    <div class="col-sm-3">
+           
+         <h:selectBooleanCheckbox  id="cert" value="#{userBean.cert}">
+            
+        </h:selectBooleanCheckbox>
+        
+    </div>
+
+ <div class="col-sm-4">
+      <p style="color:#ec0f0f;" id="error-c"></p>
+    </div>
+
+  </div>
+             
+            <br/>
+            
+                <div class="row">
+
+    <div class="col-sm-4">
+       
+        <h:commandButton class="btn btn-primary" id="submit" value="Registrieren" action="#{userBean.register}">
+           
+        </h:commandButton>
+    </div>
+	</div>
+	
+	<div class="row">	     
+		<div class="col-sm-2"></div>		 
+		<div class="col-sm-3 text-right">	                   
+			<div>* Felder sind Pflichtfelder</div>	    
+		</div>	 	
+		<div class="col-sm-4"></div>    	 	  
+	</div>        
+       
+    
+</h:form>
+</div>
+       <footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                   <li><a href="http://www.edu.lmu.de/apb/personen/dozent/alkoyak-yildiz/index.html" target="_blank">Kontakt</a></li>
+                   <li><a href="https://www.otame.de/resend.xhtml" target="_blank">Aktivierungsmail erneut senden</a></li>
+                   <li><a href="https://www.otame.de/recovery.xhtml" target="_blank">Passwort vergessen?</a></li>
+                   <li><a><small class="small">*Online Training für aufmerksamkeits- und mitgefühlsbasierte Emotionsregulation</small></a></li>
+                   
+                </ul>
+            </div>
+          	
+
+        </div>
+    </div>
+</footer>
+       </div>  
+</h:body> 
+ 
+</html>
+
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Activation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="script.js" />
+        <h:outputScript library="js" name="jquery.min.js" />
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <style>
+            label{
+                font-weight: normal !important;
+            }
+            .small{
+                color:#ffffff;
+            }
+            p{
+              color:#000;
+            }
+        </style>
+    </h:head>
+
+    <h:body styleClass="start-body">
+       <div id="wrap"> 
+     
+         
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <p class="navbar-brand"><a href="https://www.otame.de">OTAME<sup>*</sup></a></p>
+    </div>
+   </div>
+</nav>
+     
+        
+        
+        <div id="body-index" class="container" style="width:70%;  margin-top:50px; margin-left: 100px; border: 0px #f00 solid">
+            
+          <h:panelGroup layout="block" rendered="#{activation.valid}">
+   <div class="alert alert-success">
+    <strong>Aktivierung erfolgreich!</strong> Ihr Zugang wurde erfolgreich aktiviert. Sie können sich nun <a href="https://www.otame.de">hier</a> anmelden.
+  </div>
+</h:panelGroup>
+
+<h:panelGroup layout="block" rendered="#{!activation.valid}">
+   <p></p>
+
+   <div class="alert alert-danger">
+    <strong>Ein Fehler ist aufgetreten!</strong> Aktivierung fehlgeschlagen. Wenn Sie sich registriert haben aber Ihr Konto nicht aktivieren können, dann gehen Sie zur <a href="https://www.otame.de/resend.xhtml">Wiederherstellungs</a> Seite.
+</div>
+</h:panelGroup>
+   
+    
+</div>
+       <footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                   <li><a href="http://www.edu.lmu.de/apb/personen/dozent/alkoyak-yildiz/index.html" target="_blank">Kontakt</a></li>
+                   <li><a><small class="small">*Online Training für aufmerksamkeits- und mitgefühlsbasierte Emotionsregulation</small></a></li>
+                   
+                </ul>
+            </div>
+          	
+
+        </div>
+    </div>
+</footer>
+       </div>  
+</h:body> 
+ 
+</html>
+
+

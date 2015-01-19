@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Post Test | Fragebogen: Seite 1 von 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="control.js"/>
+        <style>
+            label {
+    font-weight: normal !important;
+}
+            
+        </style>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+  
+  <h:outputScript library="js" name="bootstrap.min.js" />
+       
+    </h:head>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionCheck.checkCreds()}"/>
+    </f:metadata>
+    
+    
+    <h:body styleClass="pretest-body">
+        
+        <h:form id="pretest-l-form" >
+        
+        
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand"><a href="https://www.otame.de">OTAME<sup>*</sup></a></p>
+    </div>
+    <div>
+      
+       <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">#{user}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li role="separator" class="divider"></li>
+            <li><li style="padding-top:10px"><h:commandLink id="logout" value="Log Out" action="#{sessionCheck.logout()}"/></li></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+        
+        
+      
+        </h:form>
+        
+        <div class="container">
+            
+            <h:form role="form" id="pretest-r-form" onsubmit="return validate(26)">
+            
+            <p:growl id="growl" showDetail="true" sticky="false"/>
+          
+           
+  <h2>Fragebogen: <span class="nowrap">Seite 1 von 3</span></h2>
+  <div class="otame-intro">
+    <p>Sehr geehrte Studierende, 
+  </p>
+  <p>herzlichen Dank für die Teilnahme am OTAME Programm!</p>
+  <p>Abschließend bitte ich Sie noch den letzten Fragebogen so aufrichtig wie möglich auszufüllen. Wenn Sie eine Teilnahmebestätigung wünschen, bitte ich Sie mir dies per E-Mail, mit dem Betreff „OTAME-Zertifikat“ zu schicken.  Die Beantwortung der Fragen dauert ca. 15 Minuten. Die Ergebnisse werden selbstverständlich anonym ausgewertet und ausschließlich für die Bearbeitung dieser Arbeit verwendet. Auf Wunsch kann ich Ihnen nach Abschluss der Studie die Ergebnisse zukommen lassen</p>
+<p>Falls Sie Fragen oder Rückmeldungen haben, können Sie sich jederzeit an mich wenden</p>
+  <p> 
+  Ich bedanke mich herzlich für die Teilnahme! Sie leisten mit der Beantwortung der Fragen einen großen Beitrag für die Grundlagenforschung in diesem jungen Forschungsfeld!<br />
+  Mit den besten Grüßen<br /><br />
+  Meltem Alkoyak-Yildiz 
+  </p>
+</div>
+
+<table class="table table-striped questions">
+    <thead>
+      <tr>
+        <th class="table-header">Welche der folgenden Aussagen Treffen auf Sie zu?</th>
+        <th><h:graphicImage library="images" name="slider.png" width="329" /></th>
+        
+      </tr>
+    </thead>
+      
+      <tbody>
+     <tr>
+  
+
+
+     </tr>
+
+      <tr>
+        <td id="q1" >Ich missbillige und verurteile meine eigenen Fehler und Schwächen.</td>
+        <td><h:selectOneRadio value="#{postTest.q1}" id="ptradio1" >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q2">Wenn ich mich niedergeschlagen fühle, neige ich dazu, nur noch auf das zu achten was nicht in Ordnung ist.</td>
+        <td><h:selectOneRadio value="#{postTest.q2}" id="ptradio2">
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q3">Wenn die Dinge bei mir schlecht laufen, sehe ich diese Schwierigkeiten als Teil des Lebens, den jeder
+einmal durchlebt.</td>
+        <td><h:selectOneRadio value="#{postTest.q3}" id="ptradio3">
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q4" >Wenn ich über meine Fehler und Mängel nachdenke, neige ich dazu, mich vom Rest der Welt getrennt und
+abgeschnitten zu fühlen.</td>
+        <td><h:selectOneRadio value="#{postTest.q4}" id="ptradio4" >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q5">Ich versuche, mit mir selbst liebevoll umzugehen, wenn es mir emotional schlecht geht.</td>
+        <td><h:selectOneRadio value="#{postTest.q5}" id="ptradio5" >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q6">Wenn ich bei etwas versage, das mir wichtig ist, werde ich von Gefühlen der Unzulänglichkeit aufgezehrt.</td>
+        <td><h:selectOneRadio value="#{postTest.q6}" id="ptradio6" >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q7">Wenn ich völlig am Ende bin, rufe ich mir in Erinnerung, dass es vielen anderen Menschen auf der Welt genauso geht.</td>
+        <td><h:selectOneRadio value="#{postTest.q7}" id="ptradio7">
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q8">In wirklich schwierigen Zeiten neige ich dazu, streng mit mir selbst zu sein.</td>
+        <td><h:selectOneRadio value="#{postTest.q8}" id="ptradio8" >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q9">Wenn mich etwas aufregt, versuche ich, meine Gefühle im Gleichgewicht zu halten.</td>
+        <td><h:selectOneRadio value="#{postTest.q9}" id="ptradio9"  >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q10">Wenn ich mich auf irgendeine Art unzulänglich fühle, versuche ich, mich daran zu erinnern, dass die meisten Leute solche Gefühle der Unzulänglichkeit haben.</td>
+        <td><h:selectOneRadio value="#{postTest.q10}" id="ptradio10">
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q11">Ich bin intolerant und unduldsam gegenüber denjenigen Seiten meiner Persönlichkeit, die ich nicht mag.</td>
+        <td><h:selectOneRadio value="#{postTest.q11}" id="ptradio11"  >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q12">Wenn ich eine sehr schwere Zeit durchmache, schenke ich mir selbst die Zuwendung und Einfühlsamkeit,
+die ich brauche.</td>
+        <td><h:selectOneRadio value="#{postTest.q12}" id="ptradio12"  >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q13">Wenn es mir schlecht geht, neige ich dazu zu glauben, dass die meisten anderen Menschen wahrscheinlich
+glücklicher sind als ich.</td>
+        <td><h:selectOneRadio value="#{postTest.q13}" id="ptradio13"  >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q14">Wenn etwas Unangenehmes passiert, versuche ich, einen ausgewogenen Überblick über die Situation zu
+erlangen.</td>
+        <td><h:selectOneRadio value="#{postTest.q14}" id="ptradio14"  >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q15">Ich versuche, meine Fehler als Teil der menschlichen Natur zu sehen.</td>
+        <td><h:selectOneRadio value="#{postTest.q15}" id="ptradio15" >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q16">Wenn ich Eigenschaften bei mir feststelle, die ich nicht mag, dann deprimiert mich das.</td>
+        <td><h:selectOneRadio value="#{postTest.q16}" id="ptradio16"  >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q17">Wenn ich bei etwas scheitere, das mir wichtig ist, versuche ich, die Dinge nüchtern zu betrachte.</td>
+        <td><h:selectOneRadio value="#{postTest.q17}" id="ptradio17">
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q18">Wenn ich wirklich zu kämpfen habe, neige ich zu der Ansicht, dass andere es sicher einfacher haben.</td>
+        <td><h:selectOneRadio value="#{postTest.q18}" id="ptradio18" >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q19">Ich gehe freundlich mit mir um, wenn ich Kummer und Leid erfahre.</td>
+        <td><h:selectOneRadio value="#{postTest.q19}" id="ptradio19" >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q20">Wenn mich etwas aufregt, werde ich von meinen Gefühlen förmlich mitgerissen.</td>
+        <td><h:selectOneRadio value="#{postTest.q20}" id="ptradio20" >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q21">Wenn ich Leid erfahre, kann ich mir gegenüber ein wenig kaltherzig sein.</td>
+        <td><h:selectOneRadio value="#{postTest.q21}" id="ptradio21"  >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q22">Wenn es mir schlecht geht, versuche ich, meinen Gefühlen mit Neugierde und Offenheit zu begegnen.</td>
+        <td><h:selectOneRadio value="#{postTest.q22}" id="ptradio22" >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q23">Ich akzeptiere meine Fehler und Schwächen.</td>
+        <td><h:selectOneRadio value="#{postTest.q23}" id="ptradio23"  >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q24">Wenn etwas Unangenehmes passiert, neige ich dazu, den Vorfall völlig zu übertreiben.</td>
+        <td><h:selectOneRadio value="#{postTest.q24}" id="ptradio24"  >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q25">Wenn mir etwas für mich Wichtiges misslingt, glaube ich oft, dass nur ich allein versage.</td>
+        <td><h:selectOneRadio value="#{postTest.q25}" id="ptradio25" >
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q26">Ich versuche verständnisvoll und geduldig gegenüber jenen Zügen meiner Persönlichkeit zu sein, die ich
+nicht mag.</td>
+        <td><h:selectOneRadio value="#{postTest.q26}" id="ptradio26">
+           <f:selectItems value="#{postTest.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+
+      
+    </tbody>
+      
+      
+  </table>            
+
+      
+         <h:panelGroup style="display:block; text-align:center; margin-top:2px;">
+                      
+                <h:commandButton styleClass="btn btn-primary" id="submit" value="Weiter" action="#{postTest.navigate()}"/>
+            
+                  </h:panelGroup>
+            
+       
+        </h:form>
+            
+
+            
+            </div>
+
+        
+        
+        </h:body>
+
+
+    <div class="footer-fix"></div>       
+    <footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                   <li><a href="http://www.edu.lmu.de/apb/personen/dozent/alkoyak-yildiz/index.html" target="_blank">Kontakt</a></li>
+                   <li><a><small class="small">*Online Training für aufmerksamkeits- und mitgefühlsbasierte Emotionsregulation</small></a></li>
+                   
+                </ul>
+            </div>
+            
+
+        </div>
+    </div>
+</footer>
+</html>

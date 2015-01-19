@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Password Recovery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="script.js" />
+        <h:outputScript library="js" name="jquery.min.js" />
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <style>
+            label{
+                font-weight: normal !important;
+            }
+            .small{
+                color:#ffffff;
+            }
+        </style>
+    </h:head>
+
+    <h:body styleClass="start-body">
+       <div id="wrap"> 
+   
+         
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <p class="navbar-brand"><a href="https://www.otame.de">OTAME<sup>*</sup></a></p>
+    </div>
+    
+  </div>
+</nav>
+     
+        
+        
+        <div id="body-index" class="container" style="width:70%;  margin-top:50px; margin-left: 100px; border: 0px #f00 solid">
+            
+           
+   
+        <h:form role="form" id="r-form" onsubmit="return validateRecovery()">
+            
+            <p:growl id="growl" showDetail="true" sticky="false" life="5000"/>
+            
+               
+            
+            
+            <div class="row">
+
+    <div class="col-sm-2">
+     <h:outputLabel  for="mail" value="E-Mail" />
+    </div>
+
+
+    <div class="col-sm-3">
+
+      <h:inputText class="form-control"  immediate="true"  id="mail" value="#{recovery.mail}" required="true" label="Mail" requiredMessage="Bitte geben Sie Ihre Email ein"> 
+      
+                    <f:validator validatorId="com.project.epsy.validators.EmailValidator"/>
+                   
+                </h:inputText>
+    </div>
+
+ <div class="col-sm-3">
+      <p style="color:#ec0f0f;" id="error-m"></p>
+    </div>
+
+  </div>
+            
+         
+            <br/>
+
+
+
+            <div class="row">
+
+    <div class="col-sm-4">
+       
+        <h:commandButton class="btn btn-primary" id="submit" value="Senden" action="#{recovery.send}">
+           
+        </h:commandButton>
+    </div>
+        
+    
+
+  </div>
+            
+    
+</h:form>
+</div>
+       <footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                   <li><a href="http://www.edu.lmu.de/apb/personen/dozent/alkoyak-yildiz/index.html" target="_blank">Kontakt</a></li>
+                   <li><a href="https://www.otame.de/resend.xhtml" target="_blank">Aktivierungsmail erneut senden</a></li>
+                   <li><a href="https://www.otame.de/recovery.xhtml" target="_blank">Passwort vergessen?</a></li>
+                   <li><a><small class="small">*Online Training für aufmerksamkeits- und mitgefühlsbasierte Emotionsregulation</small></a></li>
+                   
+                </ul>
+            </div>
+            
+
+        </div>
+    </div>
+</footer>
+       </div>  
+</h:body> 
+ 
+</html>
+
+

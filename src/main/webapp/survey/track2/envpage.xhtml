@@ -1,0 +1,141 @@
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Schreibe(Sitzung2)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="script2.js"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+  
+  <h:outputScript library="js" name="bootstrap.min.js" />
+
+  <style>
+#container{
+	border:1px #aaaaaa solid;
+	margin-top: 30px;  
+	position:relative;
+}
+
+#box{
+	clear: both;
+	margin: 0 auto;
+    width: 50px;
+}
+
+.letter{
+	font-size:1.1em;
+} 
+.letter li {padding-top:1.5em;}
+
+</style>
+       
+    </h:head>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionCheck.checkCreds()}"/>
+        <!--<f:event type="preRenderView" listener="#{audio1.initialize2()}"/>-->
+        <f:viewAction action="#{audio4.initialize2()}" />
+    </f:metadata>
+
+
+    <h:body styleClass="pretrack1-body">
+        
+         <h:form id="pretest-l-form" >
+        
+        
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand"><a href="https://www.otame.de">OTAME<sup>*</sup></a></p>
+    </div>
+    <div>
+      
+       <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">#{user}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li role="separator" class="divider"></li>
+            <li><li style="padding-top:10px"><h:commandLink id="logout" value="Log Out" action="#{sessionCheck.logout()}"/></li></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</h:form>
+            
+            
+<div class="container letter" id="container">
+
+    <h1 class="text-center">Mitfühlende Brief an sich selbst <small>(nach Kristin Neff, 2012)</small></h1>
+	<div class="letter">
+		<div>In dieser Übung sind Sie eingeladen, eine mitfühlende Haltung sich selbst gegenüber einzunehmen. Ziel der Übung ist es einen inneren Perspektivenwechsel zu erlauben, der wohlwollend, mitfühlend und anteilnehmend ist. Dafür benötigen Sie einen Stift und ein Blatt Papier. In dieser Woche schreiben Sie insgesamt zwei mitfühlende Briefe an sich selbst. Bitte schreiben Sie je einen Brief in einem  Übungsdurchgang.</div> 
+		
+		<h3>Einleitung</h3>
+		<div>
+			Zum Menschsein gehört auch Leid. So hat jeder Mensch Momente im Leben, in denen es schwerlich ist. Möglicherweise wird unser Leid durch die Haltung hervorgerufen, die wir einnehmen, wenn wir gegen unsere eigenen Unzulänglichkeiten kämpfen. Wir alle haben Seiten an uns, die wir weniger mögen. Wir haben alle etwas, für das wir uns vielleicht schämen und uns dadurch unsicher fühlen oder auch etwas, das uns das Gefühl gibt, wir seien nicht ausreichend.  Welche Gefühle löst dieser Aspekt in Ihnen aus? Ist es möglicherweise Furcht, Traurigkeit, Unsicherheit oder Wut? Welche Emotionen können Sie erkennen Sie, wenn Sie an diesen Aspekt denken (Neff, 2012)? 
+		</div>
+		
+		<h3>Anleitung Brief eins (im 1. Übungsdurchgang)</h3>
+		<div>Stellen sich nun ein Thema vor, dass bei Ihnen Gefühle der Unzulänglichkeit auslöst (z.B. ein Fehler, für den Sie sich verurteilen; eine bestimmte Leistung mit der Sie unzufrieden waren oder Themen wie  Ihr Aussehen oder Konflikte mit Menschen). Denken Sie nun an einen imaginären Freund: ein Freund, der innere Ausgeglichenheit, Weisheit, Güte ausstrahlt und mitfühlend ist. Dieser Freund kennt all Ihre Stärken und Schwächen, auch die Dinge, die Sie selbst an sich nicht mögen. Da dieser Freund die menschliche Natur kennt und um die Grenzen unseres Menschseins weiß, kann er Ihnen die Unterstützung geben, die Sie jetzt gerade brauchen. Und so begegnet er Ihnen mit warmen Augen. Er ist, anteilnehmend, wohlwollend, aufmerksam, geduldig, akzeptierend und vergebend.</div>
+		<div>
+			<ul><li>Schreiben Sie nun einen Brief an sich selbst und nehmen Sie die Perspektive Ihres imaginären Freundes ein. 
+					<ul>
+						<li>Konzentrieren Sie sich dabei auf Ihre wahrgenommenen Unzulänglichkeiten, für die Sie sich für gewöhnlich selbst kritisieren. Wie würde Ihr imaginärer Freund Ihnen dabei begegnen, der die Qualitäten des bedingungslosen Mitgefühls und Liebe in sich trägt? Wie könnte seine Akzeptanz und Liebe aussehen? Wie wäre die konstruktive Unterstützung, die Ihr Freund Ihnen anbietet? Wie würden sich seine Liebe, Fürsorge, sein Wohlwollen und seine Ermutigung in seinen Empfehlungen wiederspiegeln? Ihr Freund kennt Sie und ist interessiert daran, dass Sie innerlich aufblühen. Wie würden seine Vorschläge Ihnen dabei helfen aufzublühen?</li>
+						<li>Wenn Sie den Brief zu Ende geschrieben haben, legen Sie ihn für einen Moment zur Seite und bleiben Sie noch sitzen. Nehmen Sie ihn nach einigen Momenten wieder in die Hand und lesen Sie ihn noch einmal. Nehmen Sie die Worte in sich auf und spüren Sie das Mitgefühl, wie es Sie umsorgt und umfasst. Fühlen Sie, wie es Sie tröstet und beruhigt. Sie können anschließend einige Momente in ihrem Gegenwärtigen Gefühl verweilen.</li>
+					</ul>
+				</li>	
+									
+			</ul>
+		</div>
+		
+		<h3>Anleitung Brief zwei (im 2. Übungsdurchgang)</h3>
+		<div>
+			<ul>
+				<li>Schreiben Sie nun erneut einen Brief, aber nehmen Sie diesesmal eine alternative Perspektive ein:
+					<ul>
+						<li>Verfassen Sie den Brief so als würden Sie einem geliebten Freund, der wiederum mit seinen Unzulänglichkeiten zu kämpfen hat, diesen anteilnehmenden Trost und die wohlwollende Unterstützung zukommen lassen. Wie würde dies aussehen? Lesen Sie den Brief dann erneut und richten Sie diese wohlwollenden Wünsche an Sie selbst. Fühlen Sie, wie es Sie tröstet und beruhigt. Sie können anschließend einige Momente in ihrem Gegenwärtigen Gefühl verweilen.</li>
+					</ul>
+				</li>	
+			</ul>
+		</div>
+		<div style="padding:10px 0;"><small>Neff, K. (2012): Selbstmitgefühl. Wie wir uns mit unseren inneren Schächen versöhnen und uns selbst der beste Freund werden. München: Kailash Verlag</small></div>	
+
+	</div>
+</div>
+
+
+<h:form id="env">
+<p:growl id="growl" showDetail="true" sticky="false"/>
+
+       <h:panelGroup style="display:block; text-align:center; margin-top:2px;">
+                      
+                      <h:commandButton class="btn btn-primary" id="submit" value="Weiter" action="postemotions1.xhtml?faces-redirect=true"/>
+            
+                  </h:panelGroup>
+        </h:form>    
+      
+        
+    </h:body>
+    
+<div class="footer-fix"></div>  
+<footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                   <li><a href="http://www.edu.lmu.de/apb/personen/dozent/alkoyak-yildiz/index.html" target="_blank">Kontakt</a></li>
+                   <li><a><small class="small">*Online Training für aufmerksamkeits- und mitgefühlsbasierte Emotionsregulation</small></a></li>
+                   
+                </ul>
+            </div>
+            
+
+        </div>
+    </div>
+</footer>
+
+</html>

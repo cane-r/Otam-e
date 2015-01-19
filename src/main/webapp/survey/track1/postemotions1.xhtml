@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Post Emotionen für Sitzung1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="control.js"/>
+        <style>
+            label {
+    font-weight: normal !important;
+}
+            
+        </style>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+  
+  <h:outputScript library="js" name="bootstrap.min.js" />
+       
+    </h:head>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionCheck.checkCreds()}"/>
+    </f:metadata>
+    
+    
+    <h:body styleClass="pretest-body" onload="changeHashOnLoad()">
+        
+        <h:form id="pretest-l-form" >
+        
+        
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand"><a href="https://www.otame.de">OTAME<sup>*</sup></a></p>
+    </div>
+    <div>
+      
+       <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">#{user}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li role="separator" class="divider"></li>
+            <li><li style="padding-top:10px"><h:commandLink id="logout" value="Log Out" action="#{sessionCheck.logout()}"/></li></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+        
+        
+      
+        </h:form>
+
+        
+        <div class="container">
+
+            
+            <h:form role="form" id="pretest-r-form" onsubmit="return validate(37)">
+            
+            <p:growl id="growl" showDetail="true" sticky="false"/>
+  
+  <h2>Fragebogen: Emotionen für Sitzung1</h2>           
+               
+  <table class="table table-striped questions">
+    <thead>
+      <tr>
+        <th class="table-header">Welches emotionales Empfinden <br />trifft gerade jetzt auf Sie zu?</th>
+        <th><h:graphicImage library="images" name="slider.png" width="329" /></th>
+        
+      </tr>
+    </thead>
+      
+      <tbody>
+
+
+      <tr>
+        <td id="q1">Erleichtert</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q1}" id="ptradio1" >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+      </tr>
+          
+          <tr>
+        <td id="q2">Entspannt</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q2}" id="ptradio2">
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q3">Erfreut</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q3}" id="ptradio3">
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+     
+          </tr>
+    
+          <tr>
+        <td id="q4">Friedvoll</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q4}" id="ptradio4" >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q5">Liebevoll</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q5}" id="ptradio5" >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q6">Stolz</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q6}" id="ptradio6" >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q7">Motiviert</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q7}" id="ptradio7">
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+         
+          
+          <tr>
+        <td id="q8">Erfüllt</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q8}" id="ptradio8"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q9">Beruhigt</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q9}" id="ptradio9">
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q10">Ergriffen</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q10}" id="ptradio10"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q11">Dankbar</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q11}" id="ptradio11"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+
+
+
+          <tr>
+        <td id="q12">Wachsam</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q12}" id="ptradio12" >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q13">Geschützt</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q13}" id="ptradio13">
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q14">Lebendig</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q14}" id="ptradio14">
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q15">Verbunden</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q15}" id="ptradio15" >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q16">Gelassen</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q16}" id="ptradio16" >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q17">Betroffen</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q17}" id="ptradio17" >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q18">Beschämt</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q18}" id="ptradio18">
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q19">Aufgewühlt</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q19}" id="ptradio19" >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q20">Gereizt</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q20}" id="ptradio20"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q21">Gleichgültig</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q21}" id="ptradio21">
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q22">Traurig</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q22}" id="ptradio22"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q23">Unruhig</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q23}" id="ptradio23"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+
+      <tr>
+        <td id="q24">Ängstlich</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q24}" id="ptradio24" >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q25">Angespannt</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q25}" id="ptradio25"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q26">Enttäuscht</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q26}" id="ptradio26">
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q27">Hilflos</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q27}" id="ptradio27"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q28">Bedroht</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q28}" id="ptradio28"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+</tr>
+
+<tr>
+        <td id="q29">Durcheinander</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q29}" id="ptradio29"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q30">Gelangweilt</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q30}" id="ptradio30">
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q31">Mutlos</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q31}" id="ptradio31"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q32">Neidisch</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q32}" id="ptradio32"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+
+</tr>
+
+
+
+<tr>
+        <td id="q33">Melancholisch</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q33}" id="ptradio33"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q34">Müde</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q34}" id="ptradio34">
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q35">Unwohl</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q35}" id="ptradio35"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q36">Unsicher</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q36}" id="ptradio36"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+
+</tr>
+
+ <tr>
+        <td id="q37">Einsam</td>
+        <td><h:selectOneRadio value="#{postEmotions1.q37}" id="ptradio37"  >
+           <f:selectItems value="#{postEmotions1.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+      
+
+      
+    </tbody>
+      
+      
+  </table>
+      
+         
+        
+            <h:panelGroup style="display:block; text-align:center; margin-top:2px;">
+                      
+                <h:commandButton styleClass="btn btn-primary" id="submit" value="Weiter" action="#{postEmotions1.navigate()}"/>
+            
+                  </h:panelGroup>
+            
+       
+        </h:form>
+            </div>
+        
+                     
+        </h:body>
+    
+	<div class="footer-fix"></div>  
+    <footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                   <li><a href="http://www.edu.lmu.de/apb/personen/dozent/alkoyak-yildiz/index.html" target="_blank">Kontakt</a></li>
+                   <li><a><small class="small">*Online Training für aufmerksamkeits- und mitgefühlsbasierte Emotionsregulation</small></a></li>
+                   
+                </ul>
+            </div>
+          	
+
+        </div>
+    </div>
+</footer>    
+    
+</html>

@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+
+    <meta charset="utf-8"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    <h:outputScript library="js" name="jquery.min.js" />
+    <h:outputScript library="js" name="bootstrap.min.js" />
+
+    <!-- Custom CSS -->
+    <h:outputStylesheet library="css" name="simple-sidebar.css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<f:metadata>
+    <f:event type="preRenderView" listener="#{sessionCheck.checkAdminCreds()}"/>
+    </f:metadata>
+
+</h:head>
+
+<h:body style="width: 4000px;">
+    <h:form id="pretest-l-form" >
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand">OTAME*</p>
+    </div>
+    <div>
+      
+       <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrator<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li role="separator" class="divider"></li>
+            <li><li style="padding-top:10px"><h:commandLink id="logout" value="Log Out" action="#{sessionCheck.logout()}"/></li></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    </h:form>
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Records
+                    </a>
+                </li>
+                <li class="active">
+                    <h:link value="All Records" outcome="allrecords" />
+                </li>
+                <li>
+                    <h:link value="Pretest"     outcome="pretest" />
+                </li>
+                <li>
+                    <h:link value="Posttest"    outcome="posttest" />
+                </li>
+                <li>
+                    <h:link value="All students" outcome="allstudents" />
+                </li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                    <h:form id="form1"> 
+                        <p:dataTable id="admin-datatable" value="#{allRecordsService.users}" var="o" paginator="true" rows="3"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="20,50,100" widgetVar="20" style="width:4000px;" ><!-- -->
+                <f:facet name="header">  
+                    All Records  
+                </f:facet>
+                <!--
+                <p:column>
+                    <f:facet name="header">  
+                        <h:outputText value="Id" />  
+                    </f:facet>
+                    <h:outputText value="#{o.id}"/>
+                </p:column>
+                -->
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="Academic Mail Adress" />  
+                    </f:facet>
+                    <h:outputText value="#{o.mail}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="Department" />  
+                    </f:facet>
+                    <h:outputText value="#{o.department}"/>
+                </p:column>
+                
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="Sex" />  
+                    </f:facet>
+                    <h:outputText value="#{o.sex}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="Age" />  
+                    </f:facet>
+                    <h:outputText value="#{o.age}"/>
+                </p:column>
+                
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-1" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q1}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-2" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q2}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-3" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q3}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-4" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q4}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-5" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q5}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-6" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q6}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-7" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q7}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-8" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q8}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-9" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q9}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-10" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q10}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-11" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q11}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-12" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q12}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-13" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q13}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-14" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q14}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-15" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q15}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-16" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q16}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-17" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q17}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-18" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q18}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-19" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q19}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-20" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q20}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-21" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q21}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-22" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q22}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-23" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q23}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-24" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q24}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-25" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q25}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P1-26" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q26}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-1" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q27}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-2" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q28}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-3" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q29}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-4" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q30}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-5" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q31}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-6" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q32}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-7" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q33}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-8" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q34}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-9" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q35}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-10" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q36}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-11" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q37}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-12" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q38}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-13" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q39}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P2-14" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q40}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P3-1" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q41}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P3-2" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q42}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P3-3" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q43}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P3-4" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q44}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P3-5" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q45}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P3-6" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q46}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P3-7" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q47}"/>
+                </p:column>
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P3-8" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q48}"/>
+                </p:column>
+                
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P3-9" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q49}"/>
+                </p:column>
+                
+                <p:column >
+                    <f:facet name="header">  
+                        <h:outputText value="P3-10" />  
+                    </f:facet>
+                    <h:outputText value="#{o.q50}"/>
+                </p:column>
+               
+            </p:dataTable>
+            <h:commandLink value="Excel Export">
+        
+        <p:dataExporter type="xls" target="admin-datatable" fileName="records" pageOnly="true"/>
+    </h:commandLink>
+            
+        </h:form>
+  
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+   
+   
+
+</h:body>
+	<div class="footer-fix"></div>  
+    <footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                   <li><a href="http://www.edu.lmu.de/apb/personen/dozent/alkoyak-yildiz/index.html">Kontakt</a></li>
+                   <li><a><small class="small">*Online Training für aufmerksamkeits- und mitgefühlsbasierte Emotionsregulation</small></a></li>
+                   
+                </ul>
+            </div>
+          	
+
+        </div>
+    </div>
+</footer>
+</html>

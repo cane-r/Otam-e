@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Password recovery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="script.js" />
+        <h:outputScript library="js" name="jquery.min.js" />
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <style>
+            label{
+                font-weight: normal !important;
+            }
+            .small{
+                color:#ffffff;
+            }
+        </style>
+    </h:head>
+
+    <h:body styleClass="start-body">
+       <div id="wrap"> 
+   
+         
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <p class="navbar-brand"><a href="https://www.otame.de">OTAME<sup>*</sup></a></p>
+    </div>
+    
+  </div>
+</nav>
+     
+        
+        
+        <div id="body-index" class="container" style="width:70%;  margin-top:50px; margin-left: 100px; border: 0px #f00 solid">
+            
+        <h:panelGroup layout="block" rendered="#{!change.valid}">
+<div class="alert alert-danger">
+  <strong>Fehler!</strong> Passwort ungültig. Wenn Sie Ihr Passwort ändern wollen klicken Sie <a href="https://www.otame.de/recovery.xhtml">hier</a>.
+</div>
+   
+</h:panelGroup>
+
+<h:panelGroup layout="block" rendered="#{change.error}">
+   <div class="alert alert-danger">
+  <strong>Ein Fehler ist aufgetreten. Bitte veruchen Sie es <a href="https://www.otame.de/recovery.xhtml">erneut</a></strong>
+</div>
+</h:panelGroup>   
+   
+        <h:form role="form" id="r-form" onsubmit="return validateChangePassword()" rendered="#{change.valid}">
+            
+            <p:growl id="growl" showDetail="true" sticky="false" life="6000"/>
+            
+               
+            
+            
+            <div class="row">
+
+    <div class="col-sm-2">
+     <h:outputLabel  for="password" value="Neues Passwort eingeben" />
+    </div>
+
+
+    <div class="col-sm-3">
+      <h:inputSecret class="form-control" immediate="true"  id="password" value="#{change.pass1}" required="true" label="Password2" requiredMessage="Bitte Passwort eingeben."> 
+  
+                </h:inputSecret>
+    </div>
+
+ <div class="col-sm-3">
+      <p style="color:#ec0f0f;" id="error-p"></p>
+    </div>
+
+  </div>
+<br/>
+<br/>
+
+<div class="row">
+
+    <div class="col-sm-2">
+     <h:outputLabel  for="password2" value="Passwort wiederholen" />
+    </div>
+
+
+    <div class="col-sm-3">
+      <h:inputSecret class="form-control" immediate="true"  id="password2" value="#{change.pass2}" required="true" label="Password2" requiredMessage="Bitte Passwort eingeben."> 
+  
+                </h:inputSecret>
+    </div>
+
+ <div class="col-sm-3">
+      <p style="color:#ec0f0f;" id="error-p2"></p>
+    </div>
+
+  </div>
+
+            
+         
+             <br/>
+
+
+
+            <div class="row">
+
+    <div class="col-sm-4">
+       
+        <h:commandButton class="btn btn-primary" id="submit" value="Change Password" action="#{change.changePass()}">
+           
+        </h:commandButton>
+    </div>
+        
+    
+
+  </div>
+            
+    
+</h:form>
+</div>
+       <footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                   <li><a href="http://www.edu.lmu.de/apb/personen/dozent/alkoyak-yildiz/index.html" target="_blank">Kontakt</a></li>
+                   <li><a href="https://www.otame.de/resend.xhtml" target="_blank">Aktivierungsmail erneut senden</a></li>
+                   <li><a href="https://www.otame.de/recovery.xhtml" target="_blank">Passwort vergessen?</a></li>
+                   <li><a><small class="small">*Online Training für aufmerksamkeits- und mitgefühlsbasierte Emotionsregulation</small></a></li>
+                   
+                </ul>
+            </div>
+            
+
+        </div>
+    </div>
+</footer>
+       </div>  
+</h:body> 
+ 
+</html>
+
+

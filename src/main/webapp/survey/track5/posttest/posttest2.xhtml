@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Post Test | Fragebogen: Seite 3 von 3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="control.js"/>
+        <style>
+            label {
+    font-weight: normal !important;
+}
+            
+        </style>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+  
+  <h:outputScript library="js" name="bootstrap.min.js" />
+       
+    </h:head>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionCheck.checkCreds()}"/>
+    </f:metadata>
+    
+    
+    <h:body styleClass="pretest-body" onload="changeHashOnLoad()">
+        
+        <h:form id="pretest-l-form" >
+        
+        
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand"><a href="https://www.otame.de">OTAME<sup>*</sup></a></p>
+    </div>
+    <div>
+      
+       <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">#{user}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li role="separator" class="divider"></li>
+            <li><li style="padding-top:10px"><h:commandLink id="logout" value="Log Out" action="#{sessionCheck.logout()}"/></li></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+        
+        
+      
+        </h:form>
+        
+        <div class="container">
+            
+            <h:form role="form" id="pretest-r-form" onsubmit="return validatePostTest()">
+            
+            <p:growl id="growl" showDetail="true" sticky="false"/>
+          
+           
+  <h2>Fragebogen: <span class="nowrap">Seite 3 von 3</span></h2>
+            
+  <table class="table table-striped questions">
+    <thead>
+      <tr>
+        <th></th>
+        <th><h:graphicImage library="images" name="slider.png" width="329" /></th>
+        
+      </tr>
+    </thead>
+      
+      <tbody>
+
+<tr>
+        <td id="q1">Wenn sich Widerstände auftun, finde ich Mittel und Wege, mich durchzusetzen.</td>
+        <td><h:selectOneRadio value="#{postTest2.q1}" id="ptradio1" >
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q2">Die Lösung schwieriger Problem gelingt mir immer, wenn ich mich darum bemühe.</td>
+        <td><h:selectOneRadio value="#{postTest2.q2}" id="ptradio2">
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+
+
+
+
+      <tr>
+        <td id="q3">Es bereitet mir keine Schwierigkeiten, meine Absichten und Ziele zu verwirklichen.</td>
+        <td><h:selectOneRadio value="#{postTest2.q3}" id="ptradio3" >
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q4">In unerwarteten Situationen weiß ich immer, wie ich mich verhalten soll.</td>
+        <td><h:selectOneRadio value="#{postTest2.q4}" id="ptradio4">
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q5">Auch bei überraschenden Ereignissen glaube ich, dass ich gut mit ihnen zurechtkommen kann.</td>
+        <td><h:selectOneRadio value="#{postTest2.q5}" id="ptradio5">
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q6" >Schwierigkeiten sehe ich gelassen entgegen, weil ich meinen Fähigkeiten immer vertrauen kann.</td>
+        <td><h:selectOneRadio value="#{postTest2.q6}" id="ptradio6" >
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q7">Was auch immer passiert, ich werde schon klarkommen.</td>
+        <td><h:selectOneRadio value="#{postTest2.q7}" id="ptradio7" >
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q8">Für jedes Problem kann ich eine Lösung finden.</td>
+        <td><h:selectOneRadio value="#{postTest2.q8}" id="ptradio8" >
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q9">Wenn eine neue Sache auf mich zukommt, weiß ich, wie ich damit umgehen kann.</td>
+        <td><h:selectOneRadio value="#{postTest2.q9}" id="ptradio9">
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q10">Wenn ein Problem auf mich zukommt, habe ich meist mehrere Ideen, wie ich es lösen kann.</td>
+        <td><h:selectOneRadio value="#{postTest2.q10}" id="ptradio10" >
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          
+          
+      
+       
+    </tbody>
+
+
+    <tbody>
+<tr><td colspan="2"><h3>Bedeutsamkeit des Trainings</h3></td></tr>
+       <tr><td colspan="2"></td></tr>
+
+       <tr><td colspan="2"><h3>Was denken Sie, haben Sie durch das OTAME-Programm gewonnen?</h3></td></tr>
+       <tr><td colspan="2"></td></tr>
+
+      <tr>
+        <td id="q11">Ich denke, dass ich leichter mit meinen schwierigen Emotionen umgehen kann.</td>
+        <td><h:selectOneRadio value="#{postTest2.q11}" id="ptradio11" >
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q12">Ich denke, dass ich leichter mit schwierigen Situationen umgehen kann.</td>
+        <td><h:selectOneRadio value="#{postTest2.q12}" id="ptradio12">
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q13">Ich denke, dass ich im Alltag leicht auf das im OTAME Programm Gelernte zurückgreifen kann.</td>
+        <td><h:selectOneRadio value="#{postTest2.q13}" id="ptradio13" >
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+
+      <tr>
+        <td id="q14">Ich denke, dass ich besser mit Stress umgehen kann.</td>
+        <td><h:selectOneRadio value="#{postTest2.q14}" id="ptradio14" >
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+
+
+<tr><td colspan="2"></td></tr> 
+      <tr><td colspan="2"><h3></h3></td></tr>
+      <tr><td></td><td><h:graphicImage library="images" name="slider2.png" width="329"/></td></tr> 
+      <tr>
+        <td id="q15">Wie bedeutsam beurteilen Sie das OTAME-Programm für Ihren Alltag? </td>
+        <td><h:selectOneRadio value="#{postTest2.q15}" id="ptradio15"  >
+           <f:selectItems value="#{postTest2.answers}"/>
+            </h:selectOneRadio></td>
+        </tr>
+
+    </tbody>
+
+    <tbody>
+       <tr><td colspan="2"><h3>Bitte begründen Sie knapp Ihre Einschätzung:</h3></td></tr>
+       <tr><td colspan="2"></td></tr>
+<tr>
+        <td id="q16" >Was fanden Sie insgesamt gut am OTAME Programm? (Max. 250 Zeichen)</td>
+        <td><h:inputText class="form-control" immediate="true" id="q16" value="#{postTest2.q16}"/></td>
+        
+        
+      </tr>
+
+      <tr>
+        <td id="q17" >Was könnte im OTAME Programm verbessert werden? (Max. 250 Zeichen)</td>
+        <td><h:inputText class="form-control" immediate="true" id="q17" value="#{postTest2.q17}"/></td>
+        
+        
+      </tr>
+
+
+      <tr>
+        <td id="q18">Würden sie das OTAME programm weiter empfehlen?</td>
+        <td><h:selectOneRadio value="#{postTest2.q18}" id="ptradio18" >
+           <f:selectItems value="#{postTest2.answers2}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+
+    </tbody>
+      
+      
+  </table>
+      
+         
+        
+            <h:panelGroup style="display:block; text-align:center; margin-top:2px;">
+                      
+                <h:commandButton styleClass="btn btn-primary" id="submit" value="Weiter" action="#{postTest2.navigate()}"/>
+            
+                  </h:panelGroup>
+            
+       
+        </h:form>
+            </div>
+        
+        
+        </h:body>
+    <div class="footer-fix"></div>  
+    <footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                   <li><a href="http://www.edu.lmu.de/apb/personen/dozent/alkoyak-yildiz/index.html" target="_blank">Kontakt</a></li>
+                   <li><a><small class="small">*Online Training für aufmerksamkeits- und mitgefühlsbasierte Emotionsregulation</small></a></li>
+                   
+                </ul>
+            </div>
+          	
+
+        </div>
+    </div>
+</footer>    
+</html>

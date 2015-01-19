@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <!--
+    <application>
+     	   <locale-config>
+     	        <default-locale>de</default-locale>
+                
+                <supported-locale>de</supported-locale>
+                <supported-locale>en</supported-locale>
+           </locale-config>
+	   <resource-bundle>
+		<base-name>com.project.epsy.messages.labels</base-name>
+		<var>msg</var>
+	   </resource-bundle>
+     </application>
+    -->
+
+
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.Envpage</managed-bean-class>
+    <managed-bean-name>env</managed-bean-name>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.PostTest</managed-bean-class>
+    <managed-bean-name>postTest</managed-bean-name>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean> 
+
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.PostTest1</managed-bean-class>
+    <managed-bean-name>postTest1</managed-bean-name>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>  
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.PostTest2</managed-bean-class>
+    <managed-bean-name>postTest2</managed-bean-name>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>      
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.Audio1</managed-bean-class>
+    <managed-bean-name>audio1</managed-bean-name>
+    <managed-bean-scope>view</managed-bean-scope>
+</managed-bean>
+
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.Audio2</managed-bean-class>
+    <managed-bean-name>audio2</managed-bean-name>
+    <managed-bean-scope>view</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.Audio3</managed-bean-class>
+    <managed-bean-name>audio3</managed-bean-name>
+    <managed-bean-scope>view</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.Audio4</managed-bean-class>
+    <managed-bean-name>audio4</managed-bean-name>
+    <managed-bean-scope>view</managed-bean-scope>
+</managed-bean>
+
+
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.AdminBean</managed-bean-class>
+    <managed-bean-name>admin</managed-bean-name>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.Recovery</managed-bean-class>
+    <managed-bean-name>recovery</managed-bean-name>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.Change</managed-bean-class>
+    <managed-bean-name>change</managed-bean-name>
+    <managed-bean-scope>view</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.Activation</managed-bean-class>
+    <managed-bean-name>activation</managed-bean-name>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.Resend</managed-bean-class>
+    <managed-bean-name>resend</managed-bean-name>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.services.AllUsersService</managed-bean-class>
+    <managed-bean-name>allUsersService</managed-bean-name>
+    <managed-bean-scope>view</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.services.AllRecordsService</managed-bean-class>
+    <managed-bean-name>allRecordsService</managed-bean-name>
+    <managed-bean-scope>view</managed-bean-scope>
+</managed-bean>
+
+   
+  <managed-bean>
+    <managed-bean-class>com.project.epsy.beans.UserBean</managed-bean-class>
+    <managed-bean-name>userBean</managed-bean-name>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean> 
+
+
+<managed-bean>
+    <managed-bean-class>com.project.epsy.beans.SessionCheck</managed-bean-class>
+    <managed-bean-name>sessionCheck</managed-bean-name>
+    <managed-bean-scope>application</managed-bean-scope>
+</managed-bean> 
+
+    <managed-bean>
+    <managed-bean-name>preEmotions1</managed-bean-name>
+    <managed-bean-class>com.project.epsy.beans.PreEmotions1</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+
+<managed-bean>
+    <managed-bean-name>postEmotions1</managed-bean-name>
+    <managed-bean-class>com.project.epsy.beans.PostEmotions1</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+
+<managed-bean>
+    <managed-bean-name>feedback1</managed-bean-name>
+    <managed-bean-class>com.project.epsy.beans.Feedback1</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+
+<managed-bean>
+    <managed-bean-name>preTest</managed-bean-name>
+    <managed-bean-class>com.project.epsy.beans.PreTest</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+    <managed-bean-name>preTest1</managed-bean-name>
+    <managed-bean-class>com.project.epsy.beans.PreTest1</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+    <managed-bean-name>preTest2</managed-bean-name>
+    <managed-bean-class>com.project.epsy.beans.PreTest2</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+<managed-bean>
+    <managed-bean-name>preTest3</managed-bean-name>
+    <managed-bean-class>com.project.epsy.beans.PreTest3</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+
+    
+     <navigation-rule>  
+        
+        <from-view-id>/index.xhtml</from-view-id>  
+        
+         <navigation-case>  
+            
+            <from-action>#{userBean.login}</from-action>  
+            <from-outcome>pretest</from-outcome>  
+            <to-view-id>/survey/welcome.xhtml</to-view-id>  
+           <redirect/>
+        </navigation-case>  
+       
+       
+  
+        <navigation-case>  
+            <from-action>#{userBean.login}</from-action>  
+            <from-outcome>error</from-outcome>  
+            <to-view-id>/error.xhtml</to-view-id> 
+            <redirect/>
+        </navigation-case>  
+        
+    </navigation-rule> 
+
+
+
+    <navigation-rule>  
+        
+        <from-view-id>/change.xhtml</from-view-id>  
+        
+         <navigation-case>  
+            
+            <from-action>#{change.change}</from-action>  
+            <from-outcome>index</from-outcome>  
+            <to-view-id>/index.xhtml</to-view-id>  
+           <redirect/>
+       </navigation-case>
+        
+    </navigation-rule>
+    
+    
+    <navigation-rule>  
+        
+        <from-view-id>/index.xhtml</from-view-id>  
+        
+         <navigation-case>  
+            
+            <from-action>#{userBean.register}</from-action>  
+            <from-outcome>pretest</from-outcome>  
+            <to-view-id>/survey/welcome.xhtml</to-view-id>  
+           <redirect/>
+        </navigation-case>  
+       
+       
+  
+        <navigation-case>  
+            <from-action>#{userBean.register}</from-action>  
+            <from-outcome>error</from-outcome>  
+            <to-view-id>/error.xhtml</to-view-id> 
+            <redirect/>
+        </navigation-case>  
+        
+    </navigation-rule> 
+   
+   
+    
+    <lifecycle>
+       <phase-listener id="nocache">com.project.epsy.filters.CacheControlListener</phase-listener>
+    </lifecycle>
+     
+     
+</faces-config>

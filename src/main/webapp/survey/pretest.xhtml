@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Fragebogen: Seite 1 von 4</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="control.js"/>
+        <style>
+            label {
+    font-weight: normal !important;
+}
+            
+        </style>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+  
+  <h:outputScript library="js" name="bootstrap.min.js" />
+       
+    </h:head>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionCheck.checkCreds()}"/>
+    </f:metadata>
+    
+    
+    <h:body styleClass="pretest-body">
+        
+        <h:form id="pretest-l-form" >
+        
+        
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand"><a href="https://www.otame.de">OTAME<sup>*</sup></a></p>
+    </div>
+    <div>
+      
+       <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">#{user}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li role="separator" class="divider"></li>
+            <li><li style="padding-top:10px"><h:commandLink id="logout" value="Log Out" action="#{sessionCheck.logout()}"/></li></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+        
+        
+      
+        </h:form>
+        
+        <div class="container">
+            
+            <h:form role="form" id="pretest-r-form" onsubmit="return validate1()">
+            
+            <p:growl id="growl" showDetail="true" sticky="false"/>
+          
+           
+  <h2>Fragebogen: <span class="nowrap">Seite 1 von 4</span></h2>
+  <div class="otame-intro">
+	  <p>Sehr geehrte Studierende, 
+	</p>
+	<p>
+	dieses Training wird im Rahmen meiner Doktorarbeit am Lehrstuhl für Allgemeine Pädagogik und Bildungsforschung unter Leitung von Prof. Dr. Rudolf Tippelt an der LMU durchgeführt. Mit den folgenden Fragen möchte ich die Wirkung der Trainingseinheiten zum Selbstmitgefühl und Mitgefühl untersuchen. Daher bitte ich Sie die nachfolgenden Fragen so aufrichtig wie möglich zu beantworten. Die Beantwortung der Fragen dauert ca. 15 Minuten. Die Ergebnisse werden selbstverständlich anonym ausgewertet und ausschließlich für die Bearbeitung dieser Arbeit verwendet. Auf Wunsch kann ich Ihnen nach Abschluss der Studie die Ergebnisse zukommen lassen.  
+	Falls Sie Fragen oder Rückmeldungen haben, können Sie sich jederzeit an mich wenden. </p>
+	
+	<p> 
+	Ich bedanke mich herzlich für die Teilnahme! Sie leisten mit der Beantwortung der Fragen einen großen Beitrag für die Grundlagenforschung in diesem jungen Forschungsfeld!<br />
+	Mit den besten Grüßen<br /><br />
+	Meltem Alkoyak-Yildiz 
+	</p>
+</div>
+            
+  <table class="table table-striped questions">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        
+      </tr>
+    </thead>
+      
+      <tbody>
+
+        <tr><td colspan="2"><h3>Fragen zur Ausbildung</h3></td></tr>
+       <tr><td colspan="2"></td></tr>  
+        
+
+      <tr>
+        <td id="q1" >Haben Sie vor dem Studium eine Berufsausbildung absolviert? </td>
+        <td><h:selectOneRadio onclick="change(this.id)" value="#{preTest1.q1}" id="q1" >
+           <f:selectItems value="#{preTest1.answers2}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q2">Falls ja, welche</td>
+        <td><h:inputText class="form-control" immediate="true" id="q2" value="#{preTest1.q2}"/></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q3">Haben Sie schon ein Studium abgeschlossen?</td>
+        <td><h:selectOneRadio onclick="change(this.id)"  value="#{preTest1.q3}" id="q3">
+           <f:selectItems value="#{preTest1.answers2}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          <tr>
+        <td id="q4" >Falls ja, welche Fachrichtung</td>
+        <td><h:inputText class="form-control" immediate="true" id="q4" value="#{preTest1.q4}"/></td>
+        
+        
+      </tr>
+
+    </tbody>
+      
+      
+  <tbody>
+  <tr><td colspan="2"><h3>Erfahrung mit Meditation</h3></td></tr>
+       <tr><td colspan="2"></td></tr>  
+          
+          <tr>
+        <td id="q5">Haben Sie schon Meditationsübungen praktiziert?(bitte beziehen sie sich auf dem zeitraum vor dem 13.05.16) </td>
+        <td><h:selectOneRadio onclick="change(this.id)" value="#{preTest1.q5}" id="q5" >
+           <f:selectItems value="#{preTest1.answers2}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+          
+          
+          
+          <tr>
+        <td id="q6">Meditieren Sie regelmäßig?</td>
+        <td><h:selectOneRadio onclick="change(this.id)"  value="#{preTest1.q6}" id="q6"  >
+           <f:selectItems value="#{preTest1.answers2}"/>
+            </h:selectOneRadio></td>
+        
+        
+      </tr>
+      <tr>
+        <td id="q7">Falls ja, seit wann</td>
+        <td><h:inputText class="form-control" immediate="true" id="q7" value="#{preTest1.q7}"/></td>
+      </tr>
+        
+    	<tr>
+        <td id="q8">Wie oft meditieren Sie durchschnittlich im Jahr? </td>
+        <td><h:inputText class="form-control" immediate="true" id="q8" value="#{preTest1.q8}"/></td>
+        
+      </tr>
+      <tr>
+        <td id="q9">Wie viele Minuten meditieren Sie am Stück?</td>
+        <td><h:selectOneRadio  value="#{preTest1.q9}" id="q9">
+            <f:selectItems value="#{preTest1.answers3}"/>
+            </h:selectOneRadio></td>
+      </tr>      
+          
+      <tr><td colspan="2"></td></tr> 
+      <tr><td colspan="2"><h3>Erwartung an OTAME</h3></td></tr>
+      <tr><td></td><td><h:graphicImage library="images" name="slider2.png" width="329"/></td></tr> 
+      <tr>
+        <td id="q10">Welchen persönlichen Nutzen erwarten Sie vom OTAME-Programm?</td>
+        <td><h:selectOneRadio value="#{preTest1.q10}" id="q10"  >
+           <f:selectItems value="#{preTest1.answers}"/>
+            </h:selectOneRadio></td>
+        </tr>
+          
+          
+
+      
+    </tbody>
+      
+      
+  </table>
+      
+         <h:panelGroup style="display:block; text-align:center; margin-top:2px;">
+                      
+                <h:commandButton styleClass="btn btn-primary" id="submit" value="Weiter" action="#{preTest1.navigate()}"/>
+            
+                  </h:panelGroup>
+            
+       
+        </h:form>
+            
+
+            
+            </div>
+
+        
+        
+        </h:body>
+
+
+    <div class="footer-fix"></div>       
+    <footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                   <li><a href="http://www.edu.lmu.de/apb/personen/dozent/alkoyak-yildiz/index.html" target="_blank">Kontakt</a></li>
+                   <li><a><small class="small">*Online Training für aufmerksamkeits- und mitgefühlsbasierte Emotionsregulation</small></a></li>
+                   
+                </ul>
+            </div>
+          	
+
+        </div>
+    </div>
+</footer>
+</html>

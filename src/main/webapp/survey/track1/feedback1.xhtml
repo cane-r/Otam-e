@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Feedback für Sitzung1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="control.js"/>
+        <style>
+            label {
+    font-weight: normal !important;
+}
+            
+        </style>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+  
+  <h:outputScript library="js" name="bootstrap.min.js" />
+       
+    </h:head>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionCheck.checkCreds()}"/>
+    </f:metadata>
+    
+    
+    <h:body styleClass="pretest-body">
+        
+        <h:form id="pretest-l-form" >
+        
+        
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand"><a href="https://www.otame.de">OTAME<sup>*</sup></a></p>
+    </div>
+    <div>
+      
+       <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">#{user}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li style="padding-top:10px"><h:commandLink id="logout" value="Log Out" action="#{sessionCheck.logout()}"/></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+        
+        
+      
+        </h:form>
+        
+        <div class="container">
+            
+            <h:form role="form" id="pretest-r-form" onsubmit="return validateFB()">
+            
+            <p:growl id="growl" showDetail="true" sticky="false"/>
+  
+  <h2>Fragebogen: Feedback für Sitzung1</h2>
+            
+  <table class="table table-striped questions">
+    <thead>
+      <tr>
+        <th class="table-header">Welche der Aussagen treffen zu?  <br />Bitte beantworten Sie auch die offenen Fragen.</th>
+        <th><h:graphicImage library="images" name="slider.png" width="329" /></th>
+        
+      </tr>
+    </thead>
+      
+      <tbody>
+       
+    <tr>
+        <td id="q1">Es ist mir leicht gefallen die Übung <strong>Atem beobachten</strong>durchzuführen.</td>
+        <td><h:selectOneRadio  value="#{feedback1.q1}" id="q1"  >
+           <f:selectItems value="#{feedback1.answers}"/>
+            </h:selectOneRadio></td>
+    </tr>
+
+          
+          <tr>
+
+        <td id="q2">Was fanden Sie an der Übung gut?(Max. 500 Buchstaben)</td>
+
+        <td><h:inputText class="form-control" immediate="true" id="q2" value="#{feedback1.q2}"/></td>
+        
+        
+      </tr>
+
+
+<tr>
+
+        <td id="q3">Haben Sie Verbesserungsvorschläge?(Max. 500 Buchstaben)</td>
+
+        <td><h:inputText class="form-control" immediate="true" id="q3" value="#{feedback1.q3}"/></td>
+        
+        
+      </tr>
+
+
+
+         <tr>
+        <td id="q4">Es ist mir leicht gefallen die Übung <strong>Body Scan</strong> durchzuführen.</td>
+        <td><h:selectOneRadio  value="#{feedback1.q4}" id="q4"  >
+           <f:selectItems value="#{feedback1.answers}"/>
+            </h:selectOneRadio></td>
+    </tr> 
+           <tr>
+
+        <td id="q5">Was fanden Sie an der Übung gut?(Max. 500 Buchstaben)</td>
+
+        <td><h:inputText class="form-control" immediate="true" id="q5" value="#{feedback1.q5}"/></td>
+        </tr>
+
+ <tr>
+
+        <td id="q6">Haben Sie Verbesserungsvorschläge?(Max. 500 Buchstaben)</td>
+
+        <td><h:inputText class="form-control" immediate="true" id="q6" value="#{feedback1.q6}"/></td>
+        </tr>
+
+
+
+          <tr>
+        <td id="q7">Es ist mir leicht gefallen die Übung <strong>Frieden schenken</strong> durchzuführen.</td>
+        <td><h:selectOneRadio  value="#{feedback1.q7}" id="q7"  >
+           <f:selectItems value="#{feedback1.answers}"/>
+            </h:selectOneRadio></td>
+    </tr>
+
+    <tr>
+
+        <td id="q8">Was fanden Sie an der Übung gut?(Max. 500 Buchstaben)</td>
+
+        <td><h:inputText class="form-control" immediate="true" id="q8" value="#{feedback1.q8}"/></td>
+        </tr>
+
+
+        <tr>
+
+        <td id="q9">Haben Sie Verbesserungsvorschläge?(Max. 500 Buchstaben)</td>
+
+        <td><h:inputText class="form-control" immediate="true" id="q9" value="#{feedback1.q9}"/></td>
+        </tr>
+
+         <tr>
+        <td id="q10">Es ist mir leicht gefallen die Übung <strong>positive Emotionen im Körper spüren durchzuführen</strong>.</td>
+        <td><h:selectOneRadio  value="#{feedback1.q10}" id="q10"  >
+           <f:selectItems value="#{feedback1.answers}"/>
+            </h:selectOneRadio></td>
+    </tr> 
+
+    <tr>
+
+        <td id="q11">Was fanden Sie an der Übung gut?(Max. 500 Buchstaben)</td>
+
+        <td><h:inputText class="form-control" immediate="true" id="q11" value="#{feedback1.q11}"/></td>
+        </tr>
+
+          <tr>
+
+        <td id="q12">Haben Sie Verbesserungsvorschläge?(Max. 500 Buchstaben)</td>
+
+        <td><h:inputText class="form-control" immediate="true" id="q12" value="#{feedback1.q12}"/></td>
+        </tr>
+
+
+
+   
+    </tbody>
+      
+      
+  </table>
+      
+         <h:panelGroup style="display:block; text-align:center; margin-top:2px;">
+                      
+                <h:commandButton styleClass="btn btn-primary" id="submit" value="Weiter" action="#{feedback1.navigate()}"/>
+            
+                  </h:panelGroup>
+            
+       
+        </h:form>
+            
+            
+            
+            </div>
+        
+        </h:body>
+	
+	<div class="footer-fix"></div>          
+    <footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                   <li><a href="http://www.edu.lmu.de/apb/personen/dozent/alkoyak-yildiz/index.html" target="_blank">Kontakt</a></li>
+                   <li><a><small class="small">*Online Training für aufmerksamkeits- und mitgefühlsbasierte Emotionsregulation</small></a></li>
+                   
+                </ul>
+            </div>
+          	
+
+        </div>
+    </div>
+</footer>    
+</html>

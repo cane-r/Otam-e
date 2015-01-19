@@ -1,0 +1,135 @@
+<html xmlns="http://www.w3.org/1999/xhtml"  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Meditation 4(Sitzung1)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputScript library="js" name="script2.js"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+  
+  <h:outputScript library="js" name="bootstrap.min.js" />
+
+  <style>
+#container{
+	border:1px #aaaaaa solid;
+	height: 400px;
+	margin-top: 30px;  
+	position:relative;
+}
+#box{
+	clear: both;
+	margin: 0 auto;
+    width: 50px;
+}
+
+#floater {
+    float: left;
+    height: 50%;
+    width: 100%;
+    margin-bottom: -25px;
+}
+
+.circle {   
+    width: 50px;
+    height: 50px;
+    background: #3333ff;
+    border-radius: 70%;
+}
+.audio{
+	text-align:center;
+	position:absolute;
+	bottom:45%;
+	width:100%;
+}
+.intro{
+	height: 0;
+    text-align: center;
+    font-size: 28px;
+}  
+
+</style>
+       
+    </h:head>
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{sessionCheck.checkCreds()}"/>
+        <!--<f:event type="preRenderView" listener="#{audio1.initialize2()}"/>-->
+        <f:viewAction action="#{audio4.initialize2()}" />
+    </f:metadata>
+
+
+    <h:body styleClass="pretrack1-body">
+        
+         <h:form id="pretest-l-form" >
+        
+        
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <p class="navbar-brand"><a href="https://www.otame.de">OTAME<sup>*</sup></a></p>
+    </div>
+    <div>
+      
+       <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">#{user}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li role="separator" class="divider"></li>
+            <li><li style="padding-top:10px"><h:commandLink id="logout" value="Log Out" action="#{sessionCheck.logout()}"/></li></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</h:form>
+            
+            
+<div class="container" id="container">
+
+    <div class="intro">Positive Emotionen im Körper spüren für #{progress}</div>
+	<div id="floater"></div>
+	<div class="audio">
+		<audio id="a" controls="controls">
+      <source src="http://content.jwplatform.com/videos/1DHAL9ux-lgCw14gc.m4a" type="audio/mp4">
+
+      </source>
+    </audio>
+	</div>
+</div>
+
+
+<h:form id="audio" onsubmit="disableButton()">
+<p:growl id="growl" showDetail="true" sticky="false"/>
+
+       <h:panelGroup style="display:block; text-align:center; margin-top:2px;">
+                      
+                      <h:commandButton class="btn btn-primary" id="submit" value="Weiter" action="#{audio4.navigate()}"/>
+            
+                  </h:panelGroup>
+        </h:form>    
+      
+        
+    </h:body>
+    
+<div class="footer-fix"></div>  
+<footer>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="footer-body">
+                <ul class="nav navbar-nav">
+                   <li><a href="http://www.edu.lmu.de/apb/personen/dozent/alkoyak-yildiz/index.html" target="_blank">Kontakt</a></li>
+                   <li><a><small class="small">*Online Training für aufmerksamkeits- und mitgefühlsbasierte Emotionsregulation</small></a></li>
+                   
+                </ul>
+            </div>
+            
+
+        </div>
+    </div>
+</footer>
+
+</html>
